@@ -1,0 +1,367 @@
+{% load static i18n %}<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link href="{{ STATIC_URL  }}css/animate.css" type="text/css" rel="stylesheet"/>
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+	<style class="cp-pen-styles">
+
+
+			.container {
+			position: relative;
+			width: 24px;
+			height: 24px;
+			left: 46%;
+            padding-top: 3em;
+			top: 80%
+			}
+
+			.chevron {
+			position: absolute;
+			width: 28px;
+			height: 8px;
+			opacity: 0;
+			transform: scale3d(0.5, 0.5, 0.5);
+			animation: move 3s ease-out infinite;
+			}
+
+			.chevron:first-child {
+			animation: move 3s ease-out 1s infinite;
+			}
+
+			.chevron:nth-child(2) {
+			animation: move 3s ease-out 2s infinite;
+			}
+
+			.chevron:before,
+			.chevron:after {
+			content: ' ';
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 51%;
+			background: #fff;
+			}
+
+			.chevron:before {
+			left: 0;
+			transform: skew(0deg, 30deg);
+			}
+
+			.chevron:after {
+			right: 0;
+			width: 50%;
+			transform: skew(0deg, -30deg);
+			}
+
+			@keyframes move {
+			25% {
+			opacity: 1;
+			}
+			33% {
+			opacity: 1;
+			transform: translateY(30px);
+			}
+			67% {
+			opacity: 1;
+			transform: translateY(40px);
+			}
+			100% {
+			opacity: 0;
+			transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+			}
+			}
+
+			.text {
+			display: block;
+			margin-top: 75px;
+			margin-left: -30px;
+			font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+			font-size: 12px;
+			color: #fff;
+			text-transform: uppercase;
+			white-space: nowrap;
+			opacity: .25;
+			animation: pulse 2s linear alternate infinite;
+			}
+
+			@keyframes pulse {
+			to {
+			opacity: 1;
+			}
+			}
+			</style>
+</head>
+
+<body>
+
+	<header class="main-header grid" id="index" style="background-image: url('{{ STATIC_URL  }}images/fong.png')">
+		<div class="fixheader1">
+						<span>&nbsp &nbsp{{  obj.address  }} &nbsp &nbsp nng-consulting@mail.ru &nbsp &nbsp  {{ obj.telefons }}</span>
+
+		</div>
+		<div class="fixheader">
+
+			<a href="#index"><img src="{{ STATIC_URL  }}images/rectangle_header.png" alt="NNG Concalting"></a>
+			<div class="menu grid">
+				<a href="#company" class="menu-link">КОМПАНИЯ</a>
+				<a href="#paractiki" class="menu-link">ПРАКТИКИ</a>
+				<a href="#opit" class="menu-link">НАШ ОПЫТ</a>
+				<a href="#geografy" class="menu-link">ГЕОРГРАФИЯ</a>
+				<a href="#analitika" class="menu-link">АНАЛИТИКИ</a>
+
+
+			</div>
+			<div class="menu-toggle">
+				<img src="images/menu.png"/>
+				<div class="toogle">
+					<a href="#company" class="menu-link">КОМПАНИЯ</a>
+					<a href="#paractiki" class="menu-link">ПРАКТИКИ</a>
+					<a href="#opit" class="menu-link">НАШ ОПЫТ</a>
+					<a href="#geografy" class="menu-link">ГЕОРГРАФИЯ</a>
+					<a href="#analitika" class="menu-link">АНАЛИТИКИ</a>
+
+				</div>
+			</div>
+		</div>
+		<div class="telefon  wow slideInDown">
+				+7 (985) 648 6201 <br>
+				+7 (930) 409 2323
+		</div>
+		<div class="header-content  wow slideInDown" >
+			<div class="cont" style="background-image: url('{% static 'images/fon-content.png'%}')">
+
+			<span><h1>«Нестругин, Неврюев, Горлов и Партнёры»</h1></span>
+			<span>предоставляем полный спектр правовых услуг, защищаем интересы наших Заказчиков в Черноземье, Московском и многих других регионах Российской Федерации.
+			</span>
+             	<div class="container">
+				<div class="chevron"></div>
+				<div class="chevron"></div>
+				<div class="chevron"></div>
+				<!-- <span class="text">Прокрутить вниз</span> -->
+	        	</div>
+			</div>
+		</div>
+
+	</header>
+
+	<div class="contentnt-producya grid " id="paractiki" style="background-image: url('{{ STATIC_URL  }}images/bg-produkcya.png')">
+		<span>Практики</span>
+		<div class="element animated fadeInUp delay-05s"><span>корпоративное право</span></div>
+		<div class="element"><span>коммерческое право</span></div>
+		<div class="element"><span>недвижимость и строительство</span></div>
+		<div class="element"><span>разрешение споров и медиация (судебные споры; арбитражная практика)</span></div>
+		<div class="element"><span>защита деловой репутации</span></div>
+		<div class="element"><span>трудовое право</span></div>
+		<div class="element"><span>юридическое сопровождение инвестиционных проектов</span></div>
+		<div class="element"><span>налоговое право и налоговые споры</span></div>
+		<div class="element"><span>административно-правовая защита бизнеса</span></div>
+		<div class="element"><span>бухгалтерский учет и аудит</span></div>
+		<div class="element"><span>обеспечение безопасности бизнеса</span></div>
+		<div class="element"><span>другие отрасли/направления</span></div>
+		<!-- <div class="btn all">
+			<span>Подробнее ></span>
+		</div> -->
+	</div>
+
+	<div class="company wow fadeInDown" id="company">
+		<h1 data-effect="pulse">О КОМПАНИИ</h1>
+		<span >
+				Общество с ограниченной ответственностью «Консалтинговая компания «Нестругин, Неврюев, Горлов и Партнёры» было
+				основано 16 июня 2016 года.
+
+				Компания - это сравнительно «молодой», но амбициозный проект, объединивший в себе группу единомышленников, экспертов в
+				области права, безопасности, бухгалтерского учета и аудита. Компания осуществляет свою деятельность, опираясь на большой
+				профессиональный опыт Партнёров и коллектив, имеющий обширную практику в разных отраслях российской права, бухгалтерского учета и
+				аудита, опыт  претензионно-исковой работы и судебной защиты, обеспечения безопасности бизнеса. Мы предоставляем полный
+				спектр правовых услуг, защищаем интересы наших Заказчиков в Черноземье, Московском и многих других регионах
+				Российской Федерации.
+
+				В нашем коллективе работают выпускники престижных юридических вузов, доказавшие свое соответствие
+				высоким профессиональным стандартам. Благодаря своему опыту, наши эксперты отлично понимают внутренние
+				особенности работы, как коммерческих организаций,так и государственных (муниципальных) структур, что позволяет им
+				оперативно и эффективно решать поставленные Клиентом задачи врамках проекта любой сложности. Комплексный подход
+				к решению задач позволяет нам оказывать услуги, отвечающие самым высоким стандартам качества.
+		</span>
+	</div>
+
+	<div class="company wow fadeInDown" id="opit">
+		<h1>НАШ ОПЫТ  И ПАРТНЕРЫ</h1>
+		<h3>Описание кейса</h3>
+		<hr>
+		<span>
+				Общество с ограниченной ответственностью «Консалтинговая компания «Нестругин, Неврюев, Горлов и Партнёры» было
+				основано 16 июня 2016 года.
+
+				Компания - это сравнительно «молодой», но амбициозный проект, объединивший в себе группу единомышленников, экспертов в
+				области права, безопасности, бухгалтерского учета и аудита. Компания осуществляет свою деятельность, опираясь на большой
+				профессиональный опыт Партнёров и коллектив, имеющий обширную практику в разных отраслях российской права, бухгалтерского учета и
+				аудита, опыт  претензионно-исковой работы и судебной защиты, обеспечения безопасности бизнеса. Мы предоставляем полный
+				спектр правовых услуг, защищаем интересы наших Заказчиков в Черноземье, Московском и многих других регионах
+				Российской Федерации.
+		</span>
+		<div class="btn all">
+				<span>Подробнее ></span>
+		</div>
+	</div>
+
+	<div class="blue-block geografy wow fadeInDown" id="geografy" style="background-image: url('{{ STATIC_URL  }}images/geografy.png')" >
+		<div class="karta" style="background-image: url('{{ STATIC_URL  }}images/karta.png')" >
+				<h1 class="block-h1">
+						ГЕОГРАФИЯ УСЛУГ
+				</h1>
+				<span>
+						Компания оказывает услуги, преимущественно, на территории Черноземья (Воронежская, Липецкая, Белгородская, Тамбовская области) и
+						Московского региона (Московская область, г. Москва). Вместе с тем, наши специалисты имеют профессиональный опыт судебно-арбитражной
+						практики на территории других субъектов Российской Федерации (г. Санкт-Петербург и Ленинградская область, Краснодарский край,
+						Ставропольский край, Ростовская область, Смоленская область, Саратовская область, Архангельская область, Омская область,
+						Брянская область и в других субъектах).
+
+						Индивидуальный подход к каждому Клиенту, комплексный анализ спорной ситуации, позволяет нашей Компании обеспечить
+						высококвалифицированную юридическую помощь в решении вопросов любой сложности, независимо от территорий. Зачастую,
+						Заказчик не осознает, что отдельные вопросы могут быть успешно разрешены, как при непосредственном участии эксперта, так и
+						дистанционно, что позволит Клиенту существенно снизить затраты на юриста, транспортные и другие накладные расходы. По решению
+						Клиента, наши специалисты всегда готовы выехать в любой регион России для качественной защиты прав и законных интересов Клиента перед
+						контрагентами, государственными и муниципальными органами власти.
+				</span>
+		</div>
+
+	</div>
+
+	<div class="company animated fadeInUp delay-05s" id="analitika">
+		<h1 class="block-h1">АНАЛИТИКА И АКТУАЛЬНАЯ ИНФОРМАЦИЯ</h1>
+		<div class="companion">
+			<img src="{{ STATIC_URL  }}images/1e.png"/>
+			<img src="{{ STATIC_URL  }}images/3e.png"/>
+			<img src="{{ STATIC_URL  }}images/4e.png"/>
+			<img src="{{ STATIC_URL  }}images/5e.png"/>
+			<img src="{{ STATIC_URL  }}images/6e.png"/>
+			<img src="{{ STATIC_URL  }}images/2e.png"/>
+
+		</div>
+	</div>
+
+	<div class="blue-block vakanci wow fadeInDown" style="background-image: url('{{ STATIC_URL  }}images/geografy.png')">
+
+				<h1 class="block-h1">
+						ВАКАНСИИ
+				</h1>
+				<span class="block-span">
+						Вакансии в "ННГ Консалтинг"<br>
+						<hr>
+
+						На данный момент в  "ННГ Консалтинг" нет открытых вакансий.
+
+						Но мы всегда открыты для сотрудничества.
+
+						Если вы заинтересованы в работе в  "ННГ Консалтинг", напишите нам по
+
+						указанному адресу.
+
+
+						Резюме направлять на   nng-consulting@mail.ru
+				</span>
+
+		</div>
+	<div class="map">
+			<div class="data-maps">
+				<span>г. Воронеж
+						394092, Воронеж, ул. Приозерная, д. 50</span>
+			</div>
+			<div style="width: auto;" id="maps">
+
+			</div>
+			<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBWXOxD5E81VOt-8fXJangdHMvXpDRxe1A&callback=GoogleReadyHandleronac41ov" async defer></script>
+			<script>function GoogleReadyHandleronac41ov() {
+			var infoWindow, map = new google.maps.Map(document.getElementById("maps"), {
+			center: {lat: 51.62816481499506, lng: 39.680983621191444},
+			zoom: 11,
+			disableDefaultUI: true,
+			zoomControl: true,
+			mapTypeControl: true,
+			mapTypeId: "roadmap"
+			});
+			return map;
+			}</script>
+
+	</div>
+
+	<section class="formsection">
+			<div class="footer">
+					<!-- <div class="data"> -->
+						<img src="{{ STATIC_URL  }}images/logo-footer.png"/>
+						<div class="data">
+							<span><img src="{{ STATIC_URL  }}images/mail.png" style="width:20px; height:20px">nng-consulting@mail.ru</span>
+							<span><img src="{{ STATIC_URL  }}images/phone.png" style="width:20px; height:20px">Тел.: +7 (985) 648 6201 </span>
+							<span><img src="{{ STATIC_URL  }}images/phone.png" style="width:20px; height:20px">Тел.: +7 (930) 409 2323 </span>
+
+						</div>
+
+
+					<!-- </div> -->
+					<!-- <div class="container"> -->
+						<form action="" class="grid">
+							<div><input type="text" name="" id="" placeholder="Ваше имя" required></div>
+							<div><input type="text" name="" id="" placeholder="Ваш E-mail"></div>
+							<div><input type="text" name="" id="" placeholder="Ваш телефон"></div>
+							<div><button class="button">Отправить заявку</button></div>
+						</form>
+					</div>
+			</div>
+
+	</section>
+
+	<link rel="stylesheet" href="{{ STATIC_URL  }}css/main.css">
+	<script src="{{ STATIC_URL  }}js/scripts.min.js"></script>
+	<script src="{{ STATIC_URL  }}js/jquery.waypoints.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>
+		jQuery(function(f){
+			var element = f('.fixheader1');
+			var el = f('.fixheader');
+			f(window).scroll(function(){
+				element['fade'+ (f(this).scrollTop() > 200 ? 'Out': 'In')](-100);
+				if (f(this).scrollTop() > 200)
+					{
+							el.css('top', '0px');
+							el.css('background-color','rgb(18, 53, 83)')
+					}
+				else
+				{
+					el.css('top', '30px');
+					el.prop('style').removeProperty('background-color')
+				}
+			});
+
+
+		});
+	</script>
+
+<script type="text/javascript">
+ $(document).ready(function(){
+    $(".menu").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 1500);
+    });
+});
+</script>
+
+
+
+	<script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+	<script type="text/javascript">
+		new WOW().init();
+	</script>
+
+</body>
+</html>
