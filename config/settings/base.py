@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 import environ
 
+
+
+
 ROOT_DIR = environ.Path(__file__) - 3  # (nng/config/settings/base.py - 3 = nng/)
 APPS_DIR = ROOT_DIR.path('nng')
 
@@ -80,6 +83,7 @@ MIGRATION_MODULES = {
     'sites': 'nng.contrib.sites.migrations'
 }
 
+ALLOWED_HOSTS = ['nngconsulting.com']
 # DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
