@@ -21,11 +21,8 @@ from .base import *  # noqa
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Raises ImproperlyConfigured exception if DJANGO_SECRET_KEY not in os.environ
-<<<<<<< HEAD
-SECRET_KEY =  env('DJANGO_SECRET_KEY', default='J_H#;r_hQm+sP[hngF!&>iD[lQ3nD!h|!xR2P{Wi^4Qz8JJ}us')
-=======
 SECRET_KEY = env('DJANGO_SECRET_KEY', default='J_H#;r_hQm+sP[hngF!&>iD[lQ3nD!h|!xR2P{Wi^4Qz8JJ}us')
->>>>>>> 3ccfb648bde7302b4e1d5855c2e68bc7191b2879
+
 
 
 # This ensures that Django will be able to detect a secure connection
@@ -82,19 +79,19 @@ INSTALLED_APPS += ['storages', ]
 #AWS_ACCESS_KEY_ID = env('DJANGO_AWS_ACCESS_KEY_ID')
 #AWS_SECRET_ACCESS_KEY = env('DJANGO_AWS_SECRET_ACCESS_KEY')
 #AWS_STORAGE_BUCKET_NAME = env('DJANGO_AWS_STORAGE_BUCKET_NAME')
-AWS_AUTO_CREATE_BUCKET = True
-AWS_QUERYSTRING_AUTH = False
+#AWS_AUTO_CREATE_BUCKET = True
+#AWS_QUERYSTRING_AUTH = False
 
 # AWS cache settings, don't change unless you know what you're doing:
-AWS_EXPIRY = 60 * 60 * 24 * 7
+#AWS_EXPIRY = 60 * 60 * 24 * 7
 
 # TODO See: https://github.com/jschneier/django-storages/issues/47
 # Revert the following and use str after the above-mentioned bug is fixed in
 # either django-storage-redux or boto
-control = 'max-age=%d, s-maxage=%d, must-revalidate' % (AWS_EXPIRY, AWS_EXPIRY)
-AWS_HEADERS = {
-    'Cache-Control': bytes(control, encoding='latin-1')
-}
+#control = 'max-age=%d, s-maxage=%d, must-revalidate' % (AWS_EXPIRY, AWS_EXPIRY)
+#AWS_HEADERS = {
+#    'Cache-Control': bytes(control, encoding='latin-1')
+#}
 
 # URL that handles the media served from MEDIA_ROOT, used for managing
 # stored files.
@@ -120,10 +117,10 @@ SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
 
 # Anymail with Mailgun
 INSTALLED_APPS += ['anymail', ]
-ANYMAIL = {
-    'MAILGUN_API_KEY': env('DJANGO_MAILGUN_API_KEY'),
-    'MAILGUN_SENDER_DOMAIN': env('MAILGUN_SENDER_DOMAIN')
-}
+#ANYMAIL = {
+#    'MAILGUN_API_KEY': env('DJANGO_MAILGUN_API_KEY'),
+#    'MAILGUN_SENDER_DOMAIN': env('MAILGUN_SENDER_DOMAIN')
+#}
 EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
 
 # TEMPLATE CONFIGURATION
@@ -140,36 +137,36 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [
 
 # Use the Heroku-style specification
 # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-DATABASES['default'] = env.db('DATABASE_URL')
-DATABASES['default']['CONN_MAX_AGE'] = env.int('CONN_MAX_AGE', default=60)
+#DATABASES['default'] = env.db('DATABASE_URL')#
+#DATABASES['default']['CONN_MAX_AGE'] = env.int('CONN_MAX_AGE', default=60)
 
 # CACHING
 # ------------------------------------------------------------------------------
 
-REDIS_LOCATION = '{0}/{1}'.format(env('REDIS_URL', default='redis://127.0.0.1:6379'), 0)
+#REDIS_LOCATION = '{0}/{1}'.format(env('REDIS_URL', default='redis://127.0.0.1:6379'), 0)
 # Heroku URL does not pass the DB number, so we parse it in
-CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': REDIS_LOCATION,
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-            'IGNORE_EXCEPTIONS': True,  # mimics memcache behavior.
-                                        # http://niwinz.github.io/django-redis/latest/#_memcached_exceptions_behavior
-        }
-    }
-}
+#CACHES = {
+#    'default': {
+#        'BACKEND': 'django_redis.cache.RedisCache',
+#        'LOCATION': REDIS_LOCATION,
+#        'OPTIONS': {
+#            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#            'IGNORE_EXCEPTIONS': True,  # mimics memcache behavior.
+#                                        # http://niwinz.github.io/django-redis/latest/#_memcached_exceptions_behavior
+#        }
+#    }
+#}
 
 
 # Sentry Configuration
 #SENTRY_DSN = env('DJANGO_SENTRY_DSN')
-SENTRY_CLIENT = env('DJANGO_SENTRY_CLIENT', default='raven.contrib.django.raven_compat.DjangoClient')
+#SENTRY_CLIENT = env('DJANGO_SENTRY_CLIENT', default='raven.contrib.django.raven_compat.DjangoClient')
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
     'root': {
         'level': 'WARNING',
-        'handlers': ['sentry', ],
+       # 'handlers': ['sentry', ],
     },
     'formatters': {
         'verbose': {
@@ -178,10 +175,10 @@ LOGGING = {
         },
     },
     'handlers': {
-        'sentry': {
-            'level': 'ERROR',
-            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
-        },
+        #'sentry': {
+       #     'level': 'ERROR',
+       #     'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
+       # },
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
@@ -194,31 +191,31 @@ LOGGING = {
             'handlers': ['console', ],
             'propagate': False,
         },
-        'raven': {
-            'level': 'DEBUG',
-            'handlers': ['console', ],
-            'propagate': False,
-        },
-        'sentry.errors': {
-            'level': 'DEBUG',
-            'handlers': ['console', ],
-            'propagate': False,
-        },
+        #'raven': {
+        #    'level': 'DEBUG',
+        #    'handlers': ['console', ],
+        #    'propagate': False,
+        #},
+       # 'sentry.errors': {
+       #     'level': 'DEBUG',
+       #     'handlers': ['console', ],
+       #     'propagate': False,
+       # },
         'django.security.DisallowedHost': {
             'level': 'ERROR',
-            'handlers': ['console', 'sentry', ],
+            'handlers': ['console',  ],
             'propagate': False,
         },
     },
 }
-SENTRY_CELERY_LOGLEVEL = env.int('DJANGO_SENTRY_LOG_LEVEL', logging.INFO)
+#SENTRY_CELERY_LOGLEVEL = env.int('DJANGO_SENTRY_LOG_LEVEL', logging.INFO)
 #RAVEN_CONFIG = {
 #    'CELERY_LOGLEVEL': env.int('DJANGO_SENTRY_LOG_LEVEL', logging.INFO),
 #    'DSN': SENTRY_DSN
 #}
 
 # Custom Admin URL, use {% url 'admin:index' %}
-ADMIN_URL = env('DJANGO_ADMIN_URL')
+#ADMIN_URL = env('DJANGO_ADMIN_URL')
 
 # Your production stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
