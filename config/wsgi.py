@@ -16,16 +16,16 @@ framework.
 """
 import os
 import sys
-
-from django.core.wsgi import get_wsgi_application
+import django
+from django.core.handlers.wsgi import WSGIHandler
 
 
 #путь к проекту
-sys.path.insert(0, '/var/www/nngconsulting.com/nngconsulting')
+sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/nngconsulting')
 #путь к фреймворку
-sys.path.insert(0, '/var/www/nngconsulting.com/')
+sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/')
 #путь к виртуальному окружению
-sys.path.insert(0, '/var/www/nngconsulting.com/.venv/lib/python3.5/site-packages/')
+sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/.venv/lib/python3.5/site-packages/')
 
 
 # This allows easy placement of apps within the interior
@@ -45,7 +45,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
 # setting points here.
-application = get_wsgi_application()
+application = WSGIHandler()
 #if os.environ.get('DJANGO_SETTINGS_MODULE') == 'config.settings.production':
 #    application = Sentry(application)
 # Apply WSGI middleware here.
