@@ -1,4 +1,3 @@
-
 """
 WSGI config for nng project.
 
@@ -16,22 +15,13 @@ framework.
 """
 import os
 import sys
-import django
-from django.core.handlers.wsgi import WSGIHandler
 
-
-#путь к проекту
-sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/nngconsulting')
-#путь к фреймворку
-sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/')
-#путь к виртуальному окружению
-sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/.venv/lib/python3.5/site-packages/')
-
+from django.core.wsgi import get_wsgi_application
 
 # This allows easy placement of apps within the interior
 # nng directory.
-#app_path = os.path.dirname(os.path.abspath(__file__)).replace('/config', '')
-#sys.path.append(os.path.join(app_path, 'nng'))
+app_path = os.path.dirname(os.path.abspath(__file__)).replace('/config', '')
+sys.path.append(os.path.join(app_path, 'nng'))
 
 #if os.environ.get('DJANGO_SETTINGS_MODULE') == 'config.settings.production':
 #    from raven.contrib.django.raven_compat.middleware.wsgi import Sentry
@@ -45,12 +35,29 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
 # setting points here.
-application = WSGIHandler()
+application = get_wsgi_application()
 #if os.environ.get('DJANGO_SETTINGS_MODULE') == 'config.settings.production':
 #    application = Sentry(application)
 # Apply WSGI middleware here.
 # from helloworld.wsgi import HelloWorldApplication
 # application = HelloWorldApplication(application)
 
+
+""
+WSGI config for nngconsulting project.
+
+It exposes the WSGI callable as a module-level variable named ``application``.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/
+"""
+
+import os
+
+from django.core.wsgi import get_wsgi_application
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "nngconsulting.settings")
+
+application = get_wsgi_application()
 
 
