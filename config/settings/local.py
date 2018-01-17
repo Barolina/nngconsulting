@@ -13,7 +13,7 @@ from .base import *  # noqa
 
 # DEBUG
 # ------------------------------------------------------------------------------
-DEBUG = False  #env.bool('DJANGO_DEBUG', default=True)
+DEBUG = True  #env.bool('DJANGO_DEBUG', default=True)
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 
 # SECRET CONFIGURATION
@@ -78,4 +78,4 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 #CSRF_COOKIE_SECURE = True
 #CSRF_COOKIE_HTTPONLY = True
 #X_FRAME_OPTIONS = 'DENY'
-SECURE_SSL_REDIRECT = False
+#SECURE_SSL_REDIRECT = False
