@@ -18,6 +18,8 @@ import sys
 
 
 #путь к проекту
+from django.core.wsgi import get_wsgi_application
+
 sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/nngconsulting')
 #путь к фреймворку
 sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/')
