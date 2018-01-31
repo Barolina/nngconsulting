@@ -17,23 +17,22 @@ import os
 import sys
 
 
-#путь к проекту
-<<<<<<< HEAD
-=======
+# #путь к проекту
+# <<<<<<< HEAD
+# =======
 from django.core.wsgi import get_wsgi_application
-
->>>>>>> 91cdd53003d8d7ab78765930b75b05a2d1fa429c
-sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/nngconsulting')
-#путь к фреймворку
-sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/')
-#путь к виртуальному окружению
-<<<<<<< HEAD
-sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/.venv/lib/python3.5/site-packages/')
-#os.environ['HTTPS'] = "on"
-=======
-sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/.env/lib/python3.5/site-packages/')
-
->>>>>>> 91cdd53003d8d7ab78765930b75b05a2d1fa429c
+#
+# >>>>>>> 91cdd53003d8d7ab78765930b75b05a2d1fa429c
+# sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/nngconsulting')
+# #путь к фреймворку
+# sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/')
+# #путь к виртуальному окружению
+# <<<<<<< HEAD
+# sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/.venv/lib/python3.5/site-packages/')
+# #os.environ['HTTPS'] = "on"
+# =======
+# sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/.env/lib/python3.5/site-packages/')
+#
 
 # This allows easy placement of apps within the interior
 # nng directory.

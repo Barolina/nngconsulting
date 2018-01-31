@@ -66,16 +66,7 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 # Your local stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
 #SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-<<<<<<< HEAD
-#SESSION_COOKIE_SECURE = True
-#CSRF_COOKIE_SECURE = True
 
-# session expire at browser close
-#SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-
-# wsgi scheme
-#os.environ['wsgi.url_scheme'] = 'https'
-=======
 #SECURE_HSTS_SECONDS = 60
 #SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
 #    'DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS', default=True)
@@ -89,4 +80,4 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 #CSRF_COOKIE_HTTPONLY = True
 #X_FRAME_OPTIONS = 'DENY'
 #SECURE_SSL_REDIRECT = False
->>>>>>> 91cdd53003d8d7ab78765930b75b05a2d1fa429c
+
