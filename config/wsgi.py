@@ -21,23 +21,24 @@ import sys
 # <<<<<<< HEAD
 # =======
 from django.core.wsgi import get_wsgi_application
-#
-# >>>>>>> 91cdd53003d8d7ab78765930b75b05a2d1fa429c
-# sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/nngconsulting')
-# #путь к фреймворку
-# sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/')
-# #путь к виртуальному окружению
-# <<<<<<< HEAD
-# sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/.venv/lib/python3.5/site-packages/')
-# #os.environ['HTTPS'] = "on"
-# =======
-# sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/.env/lib/python3.5/site-packages/')
-#
+
+
+#путь к проекту
+from django.core.wsgi import get_wsgi_application
+
+sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/nngconsulting')
+#путь к фреймворку
+sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/')
+#путь к виртуальному окружению
+sys.path.insert(0, '/var/www/nngconsulting.com/venv/lib/python3.5/site-packages/')
+
 
 # This allows easy placement of apps within the interior
 # nng directory.
 app_path = os.path.dirname(os.path.abspath(__file__)).replace('/config', '')
 sys.path.append(os.path.join(app_path, 'nng'))
+
+
 
 #if os.environ.get('DJANGO_SETTINGS_MODULE') == 'config.settings.production':
 #    from raven.contrib.django.raven_compat.middleware.wsgi import Sentry
