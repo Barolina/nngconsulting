@@ -5,13 +5,14 @@
 
 	<meta charset="utf-8">
 
-	<title>!!!!NNGConsulting</title>
+	<title>NNGConsulting</title>
 	<meta name="description" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 	<link href="{{ STATIC_URL  }}css/animate.css" type="text/css" rel="stylesheet"/>
 	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+
 	<style class="cp-pen-styles">
 
 
@@ -155,21 +156,24 @@
 
 	<div class="contentnt-producya grid " id="paractiki" style="background-image: url('{{ STATIC_URL  }}images/bg-produkcya.png')">
 		<span>Практики</span>
-		<div class="element animated fadeInUp delay-05s"><span>корпоративное право</span></div>
-		<div class="element"><span>коммерческое право</span></div>
-		<div class="element"><span>недвижимость и строительство</span></div>
-		<div class="element"><span>разрешение споров и медиация (судебные споры; арбитражная практика)</span></div>
-		<div class="element"><span>защита деловой репутации</span></div>
-		<div class="element"><span>трудовое право</span></div>
-		<div class="element"><span>юридическое сопровождение инвестиционных проектов</span></div>
-		<div class="element"><span>налоговое право и налоговые споры</span></div>
-		<div class="element"><span>административно-правовая защита бизнеса</span></div>
-		<div class="element"><span>бухгалтерский учет и аудит</span></div>
-		<div class="element"><span>обеспечение безопасности бизнеса</span></div>
-		<div class="element"><span>другие отрасли/направления</span></div>
-		<!-- <div class="btn all">
-			<span>Подробнее ></span>
-		</div> -->
+         {% for el in practic %}
+             <a href="{{ el.get_absolute_url }}"> <div class="element">{{ el.name }}</div></a>
+        {% endfor %}
+{#		<div class="element animated fadeInUp delay-05s"><span>корпоративное право</span></div>#}
+{#		<div class="element"><span>коммерческое право</span></div>#}
+{#		<div class="element"><span>недвижимость и строительство</span></div>#}
+{#		<div class="element"><span>разрешение споров и медиация (судебные споры; арбитражная практика)</span></div>#}
+{#		<div class="element"><span>защита деловой репутации</span></div>#}
+{#		<div class="element"><span>трудовое право</span></div>#}
+{#		<div class="element"><span>юридическое сопровождение инвестиционных проектов</span></div>#}
+{#		<div class="element"><span>налоговое право и налоговые споры</span></div>#}
+{#		<div class="element"><span>административно-правовая защита бизнеса</span></div>#}
+{#		<div class="element"><span>бухгалтерский учет и аудит</span></div>#}
+{#		<div class="element"><span>обеспечение безопасности бизнеса</span></div>#}
+{#		<div class="element"><span>другие отрасли/направления</span></div>#}
+{#		<!-- <div class="btn all">#}
+{#			<span>Подробнее ></span>#}
+{#		</div>#}
 	</div>
 
 	<div class="company wow fadeInDown" id="company">

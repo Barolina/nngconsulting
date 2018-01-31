@@ -13,7 +13,7 @@ from .base import *  # noqa
 
 # DEBUG
 # ------------------------------------------------------------------------------
-DEBUG = False  #env.bool('DJANGO_DEBUG', default=True)
+DEBUG = True  #env.bool('DJANGO_DEBUG', default=True)
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 
 # SECRET CONFIGURATION
@@ -57,7 +57,7 @@ DEBUG_TOOLBAR_CONFIG = {
 
 # django-extensions
 # ------------------------------------------------------------------------------
-INSTALLED_APPS += ['django_extensions', ]
+INSTALLED_APPS += ['django_extensions',   'tinymce',]
 
 # TESTING
 # ------------------------------------------------------------------------------
@@ -81,3 +81,13 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 #X_FRAME_OPTIONS = 'DENY'
 #SECURE_SSL_REDIRECT = False
 
+# DJANGO_WYSIWYG_FLAVOR = "ckeditor"
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'relative_urls': False,
+    'plugins': 'media,spellchecker',
+    'content_style': '.mcecontentbody{font-size:13px;}',
+    'theme_advanced_buttons1': 'bold,italic,underline,bullist,numlist,|,link,unlink,image',
+    'theme_advanced_resizing': True,
+    'theme_advanced_path': False,
+}

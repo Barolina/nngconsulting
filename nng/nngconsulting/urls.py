@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 # from django.urls import path
 from django.conf.urls import url
-from nng.nngconsulting.views import index
+from nng.nngconsulting.views import index, practic,practicDetailView
 
 urlpatterns = [
-    url(r'',  index.as_view(),name='index')
+    url(r'^$',  index.as_view(),name='index'),
+    url(r'^practic/$', practic.as_view(), name='practic'),
+    url(r'^practi/(?P<pk>\d+)$', practicDetailView.as_view(), name='practic-detail'),
+
 ]
