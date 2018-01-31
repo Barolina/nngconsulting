@@ -1,0 +1,17 @@
+AddDefaultCharset utf-8
+AddHandler wsgi-script .py
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /config/wsgi.py/$1 [QSA,L]
+
+
+RewriteRule ^(staticfiles/.*)$ - [L]
+RewriteRule ^(media/.*)$ - [L]
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^nngconsulting.com
+RewriteRule (.*) http://www.nngconsulting.com/$1 [R=301,L]
+
+RewriteCond %{SERVER_PORT} ^443$ [OR]
+RewriteCond %{HTTPS} =on
+RewriteRule ^(.*)$ http://nngconsulting.com/$1 [R=301,L]

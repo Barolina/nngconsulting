@@ -17,6 +17,12 @@ import os
 import sys
 
 
+# #путь к проекту
+# <<<<<<< HEAD
+# =======
+from django.core.wsgi import get_wsgi_application
+
+
 #путь к проекту
 from django.core.wsgi import get_wsgi_application
 
@@ -31,6 +37,8 @@ sys.path.insert(0, '/var/www/nngconsulting.com/venv/lib/python3.5/site-packages/
 # nng directory.
 app_path = os.path.dirname(os.path.abspath(__file__)).replace('/config', '')
 sys.path.append(os.path.join(app_path, 'nng'))
+
+
 
 #if os.environ.get('DJANGO_SETTINGS_MODULE') == 'config.settings.production':
 #    from raven.contrib.django.raven_compat.middleware.wsgi import Sentry
