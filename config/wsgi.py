@@ -21,12 +21,12 @@ from django.core.wsgi import get_wsgi_application
 
 
 #путь к проекту
-sys.path.insert(0, '/var/www/nngconsulting.com/nngconsulting')
+sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/nngconsulting')
 #путь к фреймворку
-sys.path.insert(0, '/var/www/nngconsulting.com/')
+sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/')
 #путь к виртуальному окружению
-sys.path.insert(0, '/var/www/nngconsulting.com/.venv/lib/python3.5/site-packages/')
-
+sys.path.insert(0, '/var/www/www-root/data/www/nngconsulting.com/.venv/lib/python3.5/site-packages/')
+#os.environ['HTTPS'] = "on"
 
 # This allows easy placement of apps within the interior
 # nng directory.
