@@ -14,7 +14,7 @@ from .base import *  # noqa
 
 # DEBUG
 # ------------------------------------------------------------------------------
-DEBUG = True  #env.bool('DJANGO_DEBUG', default=True)
+DEBUG = False  #env.bool('DJANGO_DEBUG', default=True)
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 
 # SECRET CONFIGURATION

@@ -81,7 +81,7 @@ MIGRATION_MODULES = {
     'sites': 'nng.contrib.sites.migrations'
 }
 
-# ALLOWED_HOSTS = ['nngconsulting.com','.nngconsulting.com']
+ALLOWED_HOSTS = ['nngconsulting.com','.nngconsulting.com']
 # DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
