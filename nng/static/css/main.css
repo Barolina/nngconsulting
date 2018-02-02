@@ -844,7 +844,6 @@ body {
     opacity: 0.64; }
 
 .fix-header {
-  border: 1px solid red;
   z-index: 10;
   height: 80px;
   width: 100%;
@@ -861,7 +860,6 @@ body {
             align-content: left;
     text-align: center; }
   .fix-header .menu {
-    border: 1px solid red;
     grid-column: 2;
     z-index: 2;
     grid-template-rows: 80px;
@@ -886,7 +884,6 @@ body {
     grid-gap: 20px;
     padding-right: 10px; }
     .fix-header .menu a {
-      border: 1px solid red;
       text-decoration: none;
       color: #eeeeee; }
       .fix-header .menu a:hover {
@@ -912,7 +909,6 @@ body {
     padding-top: 1em;
     padding-right: 5em;
     padding-left: 2em;
-    border: 1px solid red;
     color: #eeeeee; }
     .fix-header .menu-toggle img {
       color: #eeeeee;
@@ -1483,7 +1479,6 @@ hr {
     -webkit-align-content: center;
         -ms-flex-line-pack: center;
             align-content: center;
-    border: 1px solid red;
     height: 2.5em;
     width: 100%;
     z-index: 400;
@@ -1518,8 +1513,7 @@ hr {
           -ms-flex-align: center;
               align-items: center;
       text-align: center;
-      padding-right: 10px;
-      border: 1px solid red; }
+      padding-right: 10px; }
       .fixheader .menu a {
         text-decoration: none;
         color: #eeeeee; }
@@ -1547,7 +1541,7 @@ hr {
       justify-items: end;
       padding-right: 5px;
       color: #eeeeee;
-      border: 1px solid red; }
+    }
       .fixheader .menu-toggle img {
         background-position: center center;
         -webkit-background-size: cover;
