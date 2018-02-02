@@ -55,7 +55,8 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     # custom users app
     'nng.users.apps.UsersConfig',
-    'nng.nngconsulting'
+    'nng.nngconsulting',
+    'django_summernote',
     # Your stuff: custom apps go here
 ]
 

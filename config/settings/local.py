@@ -8,6 +8,7 @@ Local settings for nng project.
 - Add Django Debug Toolbar
 - Add django-extensions as app
 """
+import os
 
 from .base import *  # noqa
 
@@ -57,7 +58,7 @@ DEBUG_TOOLBAR_CONFIG = {
 
 # django-extensions
 # ------------------------------------------------------------------------------
-INSTALLED_APPS += ['django_extensions',   'tinymce',]
+INSTALLED_APPS += ['django_extensions', ]
 
 # TESTING
 # ------------------------------------------------------------------------------
@@ -82,12 +83,20 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 #SECURE_SSL_REDIRECT = False
 
 # DJANGO_WYSIWYG_FLAVOR = "ckeditor"
-TINYMCE_DEFAULT_CONFIG = {
-    'theme': 'advanced',
-    'relative_urls': False,
-    'plugins': 'media,spellchecker',
-    'content_style': '.mcecontentbody{font-size:13px;}',
-    'theme_advanced_buttons1': 'bold,italic,underline,bullist,numlist,|,link,unlink,image',
-    'theme_advanced_resizing': True,
-    'theme_advanced_path': False,
+
+SUMMERNOTE_CONFIG = {
+    'width': '100%',
+    'height': '200px',
+    'css': (
+        '//cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/theme/base16-dark.min.css',
+    ),
+    'css_for_inplace': (
+        '//cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/theme/base16-dark.min.css',
+    ),
+    'codemirror': {
+        'theme': 'base16-dark',
+        'mode': 'htmlmixed',
+        'lineNumbers': 'true',
+    },
+    'lazy': True,
 }

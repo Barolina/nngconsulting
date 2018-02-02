@@ -912,6 +912,7 @@ body {
     padding-top: 1em;
     padding-right: 5em;
     padding-left: 2em;
+    border: 1px solid red;
     color: #eeeeee; }
     .fix-header .menu-toggle img {
       color: #eeeeee;
@@ -1005,6 +1006,14 @@ body {
             align-content: center;
     display: grid;
     cursor: pointer; }
+    .contentnt-producya .element a {
+      text-decoration: none;
+      color: #2a3137;
+      font-size: 1em;
+      font-weight: 400;
+      line-height: 18px;
+      text-align: center;
+      font-family: Georgia; }
     .contentnt-producya .element span {
       color: #2a3137;
       font-size: 1em;
@@ -1207,6 +1216,7 @@ hr {
     grid-template-columns: 1fr 450px;
     text-align: center;
     grid-row: auto;
+
     grid-template-rows: 100px 150px;
     justify-items: center;
     position: relative; }
@@ -1429,9 +1439,35 @@ hr {
       z-index: 7; }
     .header-content .cont span {
       z-index: 6;
+      padding-top: 1em;
       padding-left: 1em;
       padding-right: 1em;
-      padding-bottom: 3em; }
+      padding-bottom: 4em; }
+
+.practic-header {
+  margin-bottom: 10px; }
+  .practic-header .fixheader1 {
+    top: 0px; }
+  .practic-header .fixheader {
+    background-color: #123553; }
+
+.content-practic {
+  padding-top: 80px; }
+
+.links-header {
+  text-align: left; }
+  .links-header ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0; }
+    .links-header ul li {
+      float: left; }
+  .links-header a {
+    text-decoration: none; }
+  .links-header h3 {
+    text-decoration: none;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none; }
 
 @media only screen and (max-width: 768px) {
   .contentnt-producya {
@@ -1447,6 +1483,7 @@ hr {
     -webkit-align-content: center;
         -ms-flex-line-pack: center;
             align-content: center;
+    border: 1px solid red;
     height: 2.5em;
     width: 100%;
     z-index: 400;
@@ -1481,7 +1518,8 @@ hr {
           -ms-flex-align: center;
               align-items: center;
       text-align: center;
-      padding-right: 10px; }
+      padding-right: 10px;
+      border: 1px solid red; }
       .fixheader .menu a {
         text-decoration: none;
         color: #eeeeee; }
@@ -1508,7 +1546,8 @@ hr {
               align-content: center;
       justify-items: end;
       padding-right: 5px;
-      color: #eeeeee; }
+      color: #eeeeee;
+      border: 1px solid red; }
       .fixheader .menu-toggle img {
         background-position: center center;
         -webkit-background-size: cover;

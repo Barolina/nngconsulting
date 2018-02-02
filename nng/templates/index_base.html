@@ -1,0 +1,182 @@
+{% load static i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}NNGConsulting{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NNGGConsulting">
+    <meta name="author" content="Barolina">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+    {% block css %}
+     	<link href="{{ STATIC_URL  }}css/animate.css" type="text/css" rel="stylesheet"/>
+    	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+
+        <!-- Your stuff: Third-party CSS libraries go here -->
+    {#    {% compress css %}#}
+        <!-- This file stores project-specific CSS -->
+        <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    {#    {% endcompress %}#}
+
+	    <style class="cp-pen-styles">
+
+
+			.container {
+			position: relative;
+			width: 24px;
+			height: 24px;
+			left: 46%;
+            padding-top: 3em;
+			top: 80%
+			}
+
+			.chevron {
+			position: absolute;
+			width: 28px;
+			height: 8px;
+			opacity: 0;
+			transform: scale3d(0.5, 0.5, 0.5);
+			animation: move 3s ease-out infinite;
+			}
+
+			.chevron:first-child {
+			animation: move 3s ease-out 1s infinite;
+			}
+
+			.chevron:nth-child(2) {
+			animation: move 3s ease-out 2s infinite;
+			}
+
+			.chevron:before,
+			.chevron:after {
+			content: ' ';
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 51%;
+			background: #fff;
+			}
+
+			.chevron:before {
+			left: 0;
+			transform: skew(0deg, 30deg);
+			}
+
+			.chevron:after {
+			right: 0;
+			width: 50%;
+			transform: skew(0deg, -30deg);
+			}
+
+			@keyframes move {
+			25% {
+			opacity: 1;
+			}
+			33% {
+			opacity: 1;
+			transform: translateY(30px);
+			}
+			67% {
+			opacity: 1;
+			transform: translateY(40px);
+			}
+			100% {
+			opacity: 0;
+			transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+			}
+			}
+
+			.text {
+			display: block;
+			margin-top: 75px;
+			margin-left: -30px;
+			font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+			font-size: 12px;
+			color: #fff;
+			text-transform: uppercase;
+			white-space: nowrap;
+			opacity: .25;
+			animation: pulse 2s linear alternate infinite;
+			}
+
+			@keyframes pulse {
+			to {
+			opacity: 1;
+			}
+			}
+			</style>
+    {% endblock %}
+
+  </head>
+
+  <body>
+
+      {% block content %}
+            <p>Use this document as a way to quick start any new project.</p>
+      {% endblock content %}
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% block javascript %}
+      <!-- Required by Bootstrap v4 beta -->
+
+	<link rel="stylesheet" href="{{ STATIC_URL  }}css/main.css">
+	<script src="{{ STATIC_URL  }}js/scripts.min.js"></script>
+	<script src="{{ STATIC_URL  }}js/jquery.waypoints.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>
+		jQuery(function(f){
+			var element = f('.fixheader1');
+			var el = f('.fixheader');
+			f(window).scroll(function(){
+				element['fade'+ (f(this).scrollTop() > 200 ? 'Out': 'In')](-100);
+				if (f(this).scrollTop() > 200)
+					{
+							el.css('top', '0px');
+							el.css('background-color','rgb(18, 53, 83)')
+					}
+				else
+				{
+					el.css('top', '30px');
+					el.prop('style').removeProperty('background-color')
+				}
+			});
+
+
+		});
+	</script>
+
+    <script type="text/javascript">
+     $(document).ready(function(){
+        $("#menu").on("click","a", function (event) {
+            event.preventDefault();
+            var id  = $(this).attr('href'),
+                top = $(id).offset().top-80;
+            $('body,html').animate({scrollTop: top}, 1700);
+        });
+    });
+
+    </script>
+
+
+
+	<script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+	<script type="text/javascript">
+		new WOW().init();
+	</script>
+      <!-- Your stuff: Third-party javascript libraries go here -->
+
+      <!-- place project specific Javascript in this file -->
+{#      {% compress js %}#}
+
+{#      {% endcompress %}#}
+
+    {% endblock javascript %}
+  </body>
+</html>
+

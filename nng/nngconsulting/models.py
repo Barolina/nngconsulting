@@ -5,7 +5,7 @@ from django.db import models
 # Create your models here.
 # Create your models here.
 from django.urls import reverse
-from tinymce.models import HTMLField
+
 
 
 class NNGModel(models.Model):
@@ -22,14 +22,16 @@ class NNGModel(models.Model):
     opit_text = models.TextField(default='', null=True, verbose_name=u"текст об опыте")
 
 class Practici(models.Model):
-    name = HTMLField()
-    note = HTMLField()
+    name = models.TextField(default='', null=True, verbose_name=u"текст о компании")
+    note = models.TextField(default='', null=True, verbose_name=u"текст о компании")
 
     class Meta:
-        verbose_name = 'Описание практис'
+        verbose_name = u'Описание практик'
 
     def get_absolute_url(self):
         """
         Returns the url to access a particular instance of MyModelName.
         """
         return reverse('nng:practic-detail', args=[str(self.id)])
+    def __str__(self):
+        return  self.name

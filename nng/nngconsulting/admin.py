@@ -1,18 +1,28 @@
 from django.contrib import admin
 
 # Register your models here.
+from django_summernote.widgets import SummernoteWidget
+
 from nng.nngconsulting.models import NNGModel, Practici
+from django import forms
+
+
+class PracticiAdminForm(forms.ModelForm):
+    class Meta:
+        model = Practici
+        widgets = {
+            'name': SummernoteWidget(),
+            'note':  SummernoteWidget(),
+        }
+        fields = '__all__'
 
 
 
-
-class NNGModelAdmin(admin.ModelAdmin):
-    change_form_template = 'admin/change_form.html'
-
-admin.site.register(NNGModel, NNGModelAdmin)
+admin.site.register(NNGModel)
 
 
 class PracticiAdmin(admin.ModelAdmin):
-    change_form_template = 'admin/change_form.html'
+    form = PracticiAdminForm
+
 
 admin.site.register(Practici, PracticiAdmin)
