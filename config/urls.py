@@ -14,7 +14,7 @@ urlpatterns = [
 
     # User management
     url(r'^users/', include('nng.users.urls', namespace='users')),
-    url(r'', include('nng.nngconsulting.urls', namespace='nng')),
+    url(r'^', include('nng.nngconsulting.urls', namespace='nng')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^summernote/', include('django_summernote.urls')),
     # Your stuff: custom urls includes go here
