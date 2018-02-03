@@ -21,10 +21,13 @@ import sys
 # <<<<<<< HEAD
 # =======
 #<<<<<<< HEAD
+#<<<<<<< HEAD
 #from django.core.wsgi import get_wsgi_application
 
 #=======
 #>>>>>>> b5b30be483cb6abf23e10e5aecd46ad928b83b63
+#=======
+#>>>>>>> 343e98302129f3cd61cdf9538b009330f8bfb212
 
 #путь к проекту
 from django.core.wsgi import get_wsgi_application
