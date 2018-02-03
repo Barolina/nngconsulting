@@ -7,7 +7,7 @@ from django.views import defaults as default_views
 
 urlpatterns = [
 
-    url(r'^/', include('nng.nngconsulting.urls', namespace='nng')),
+    url(r'^', include('nng.nngconsulting.urls', namespace='nng')),
     url(r'^home/', TemplateView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
